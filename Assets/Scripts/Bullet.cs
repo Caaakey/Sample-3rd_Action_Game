@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
@@ -7,13 +9,6 @@ public class Bullet : MonoBehaviour
     public void Shoot(float power)
     {
         m_Rigidbody.AddRelativeForce(Vector3.forward * m_Rigidbody.mass * power);
+        Destroy(gameObject, 10f);
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        //m_Rigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete;
-        //m_Rigidbody.isKinematic = true;
-    }
-
-
 }
